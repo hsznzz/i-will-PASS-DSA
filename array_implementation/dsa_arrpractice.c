@@ -123,7 +123,7 @@ int main() {
     //Practice 7: insertSorted()
     printf("\nPractice 7: insertSorted()\n\n");
 
-        studtype addstud4 = {{"de Paz", "Jade Shaira", ' '}, 9999, "BSCS", 3};
+        studtype addstud4 = {{"de Paz", "Jade Shaira", 'I'}, 3332, "BSCS", 3};
         insertSorted(&students, addstud4);
         display(students);
 
@@ -201,6 +201,8 @@ void insertSorted(LIST *students, studtype addstud){
         students->Elements[i] = students->Elements[i - 1];    
         }
         
+        students->Elements[i] = addstud;
+        students->count++;
     }
 
 
