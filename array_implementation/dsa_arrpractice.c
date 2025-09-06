@@ -158,7 +158,7 @@ int main() {
         int located;
         located = locateID(students, 2926);
 
-        printf("Student is located at %d", located);
+        printf("Location: Student %d", located);
 
 }
 
@@ -244,7 +244,7 @@ void insertAtPos(LIST *students, studtype addstud, int pos){
     int i = 0;
 
     if (students->count != MAX){
-        if(pos >= 0 && pos <= students->count){                    // allow insert at end
+        if(pos >= 0 && pos <= students->count){                    
             for(i = students->count; i > pos; i--){
                 students->Elements[i] = students->Elements[i - 1]; // FIX: shift right from i-1
             }
@@ -273,7 +273,7 @@ int locateID(LIST students, int ID){
     if (i == students.count){
         return -1;                                                // FIX: not found
     }
-    return i;                                                     // found
+    return i + 1;                                                     // found
 }
 
 
