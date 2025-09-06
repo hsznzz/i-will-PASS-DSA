@@ -1,7 +1,7 @@
 //first ever practice in C for dsa
 //created by: Hestia Meizi Tibon
 //date created: September 3, 2025
-//date modified: September 4, 2025
+//date modified: September 5, 2025
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,8 +32,12 @@ void insertFirst(LIST *students, studtype addstud);
 void insertLast(LIST *students, studtype addstud);
 void insertLastUnique(LIST *students, studtype addstud);
 void arrSortID(LIST *students);
-void display(LIST students);
 void insertSorted(LIST *students, studtype addstud);
+void insertAtPos(LIST *students, studtype addstud, int);
+void deleteAtPos(LIST *students, int);
+int locateID(LIST students, int);
+void display(LIST students);
+
 
 
 
@@ -71,7 +75,8 @@ int main() {
     //Practice 2: initList()
     printf("\nPractice 2: initList()\n\n");
 
-        LIST students = initList(students);
+        LIST students = {0};                 // (minor safety init) keep API style below
+        students = initList(students);
         printf("Your list now has an %d number of elements", students.count);
 
 
@@ -86,7 +91,7 @@ int main() {
         insertFirst(&students, addstud1);
         insertFirst(&students, addstud2);
         insertFirst(&students, L.Elements[0]);
-        display(students);
+        //display(students);
 
 
     printf("\n=====================================\n");
@@ -95,7 +100,7 @@ int main() {
 
         insertLast(&students, L.Elements[1]);
         insertLast(&students, L.Elements[2]);
-        display(students);
+        //display(students);
 
         
 
@@ -108,7 +113,7 @@ int main() {
         
         studtype addstud3 = {{"Ladrera", "Raiken", 'D'}, 3333, "BSCS", 3};
         insertLastUnique(&students, addstud3);
-        display(students);
+        //display(students);
 
 
     printf("\n=====================================\n");
@@ -116,7 +121,7 @@ int main() {
     printf("\nPractice 6: arrSort()\n\n");
 
         arrSortID(&students);
-        display(students);
+        //display(students);
 
 
     printf("\n=====================================\n");
@@ -126,6 +131,34 @@ int main() {
         studtype addstud4 = {{"de Paz", "Jade Shaira", 'I'}, 3332, "BSCS", 3};
         insertSorted(&students, addstud4);
         display(students);
+
+
+    printf("\n=====================================\n");
+    //Practice 8: insertAtPos()
+    printf("\nPractice 8: insertAtPos()\n\n");
+
+        insertAtPos(&students, L.Elements[0], 3);
+        insertAtPos(&students, L.Elements[1], 3);
+        display(students);
+
+    
+    printf("\n=====================================\n");
+    //Practice 9: deleteAtPos()
+    printf("\nPractice 9: deleteAtPos()\n\n");
+
+        deleteAtPos(&students, 0);
+        deleteAtPos(&students, 0);
+        display(students);
+
+
+    printf("\n=====================================\n");
+    //Practice 10: locateID()
+    printf("\nPractice 10: locateID()\n\n");
+
+        int located;
+        located = locateID(students, 2926);
+
+        printf("Student is located at %d", located);
 
 }
 
@@ -196,16 +229,51 @@ void arrSortID(LIST *students){
 void insertSorted(LIST *students, studtype addstud){
     int i = students->count;
 
-    if(students->count != MAX){ 
+    if(students->count < MAX){  // tiny clarity: capacity check
         for (i = students->count; i > 0 && students->Elements[i - 1].ID > addstud.ID; i--) {
-        students->Elements[i] = students->Elements[i - 1];    
+            students->Elements[i] = students->Elements[i - 1];    
         }
-        
+
         students->Elements[i] = addstud;
         students->count++;
     }
+}
 
+//prac8
+void insertAtPos(LIST *students, studtype addstud, int pos){
+    int i = 0;
 
+    if (students->count != MAX){
+        if(pos >= 0 && pos <= students->count){                    // allow insert at end
+            for(i = students->count; i > pos; i--){
+                students->Elements[i] = students->Elements[i - 1]; // FIX: shift right from i-1
+            }
+            students->Elements[pos] = addstud;
+            students->count++;
+        }
+    }       
+}
+
+//prac9
+void deleteAtPos(LIST *students, int pos){
+    int i = 0;
+
+    if(pos >= 0 && pos < students->count){
+        for(i = pos; i < students->count - 1; i++){               // FIX: start at pos, pull from i+1
+            students->Elements[i] = students->Elements[i + 1];
+        }
+        students->count--;
+    }
+}
+
+//prac10
+int locateID(LIST students, int ID){
+    int i;
+    for(i = 0; i < students.count && students.Elements[i].ID != ID; i++){}
+    if (i == students.count){
+        return -1;                                                // FIX: not found
+    }
+    return i;                                                     // found
 }
 
 
