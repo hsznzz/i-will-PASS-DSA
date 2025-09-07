@@ -39,5 +39,98 @@ int locateID(LIST students, int);
 void display(LIST students);
 
 int main(){
+    LIST students = initList(students);
+    printf("\ncount is %d", students.count);
 
+    studtype addstud1 = {{"Bocado", "Denise", 'L'}, 1111, "BSIT", 2};
+    studtype addstud2 = {{"Lima", "Vince", 'M'}, 2222, "CHEM", 3};
+    studtype addstud3 = {{"Marbella", "Jasper", 'S'}, 3333, "BSIT", 3};
+    
+    printf("\n\ninsertfirst = = = = = = = = = =\n");
+    insertFirst(&students, addstud1);
+    display(students);
+
+    printf("\n\ninsertlast = = = = = = = = = = =\n");
+    insertLast(&students, addstud3);
+    display(students);
+
+    printf("\n\ninsertlastUnique = = = = = = = =\n");
+    insertLastUnique(&students, addstud2);
+    display(students);
+
+    printf("\n\narrSortID = = = = = = = = = = =\n");
+    arrSortID(&students);
+    display(students);
+}
+
+
+//FUNCTION DEFINITION = = = = = = = = = = = = = = = = = = = = = = =
+LIST initList(LIST students){
+    students.count = 0;
+    return students;
+}
+
+void insertFirst(LIST *students, studtype addstud){
+    int i;
+    if(students->count < MAX){
+        for(i = students->count; i < 0; i--){
+            students->Elements[i] = students->Elements[i - 1];
+        }
+        students->Elements[0] = addstud;
+        students->count++;
+    }
+}
+
+void insertLast(LIST *students, studtype addstud){
+    int i;
+    if(students->count != MAX){
+        students->Elements[students->count] = addstud;
+        students->count++;
+    }
+}
+
+void insertLastUnique(LIST *students, studtype addstud){
+    int i;
+    if(students->count != MAX){
+        for(i = 0; i < students->count && students->Elements[i].ID != addstud.ID; i++){}
+        if(i == students->count){
+            students->Elements[students->count] = addstud;
+            students->count++;
+        }
+    }
+}
+
+void arrSortID(LIST *students){
+    int i, j;
+    studtype temp;
+    for(i = 0; i < students->count; i++){
+        for(j = 0; j < students->count; j++){
+            if(students->Elements[j].ID > students->Elements[i].ID){
+                temp = students->Elements[j];
+                students->Elements[j] = students->Elements[i];
+                students->Elements[i] = temp;
+            }
+        }
+    }
+}
+
+void insertSorted(LIST *students, studtype addstud){
+    
+}
+
+
+
+//DISPLAY = = = = = = = = = = = = = = = = = = = = = ==  
+void display(LIST students){
+    int i = 0;
+
+    printf("\nSTUDENT LIST:\n");
+
+    for(i = 0; i < students.count; i++){
+        printf("\nStudent %d\n", i + 1);
+        printf("Name: %s, %s %c.\n", students.Elements[i].name.LName, students.Elements[i].name.FName, students.Elements[i].name.Mi);
+        printf("ID: %d\n", students.Elements[i].ID);
+        printf("Course: %s\n", students.Elements[i].Course);
+        printf("Year: %d\n", students.Elements[i].Year);
+    }
 }

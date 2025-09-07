@@ -75,7 +75,7 @@ int main() {
     //Practice 2: initList()
     printf("\nPractice 2: initList()\n\n");
 
-        LIST students = {0};                 // (minor safety init) keep API style below
+        LIST students;                 // (minor safety init) keep API style below
         students = initList(students);
         printf("Your list now has an %d number of elements", students.count);
 
