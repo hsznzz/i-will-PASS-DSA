@@ -1,7 +1,7 @@
 //first ever practice in C for dsa
 //created by: Hestia Meizi Tibon
 //date created: September 3, 2025
-//date modified: September 5, 2025
+//date modified: September 6, 2025
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -115,7 +115,51 @@ void arrSortID(LIST *students){
 }
 
 void insertSorted(LIST *students, studtype addstud){
-    
+    int i = students->count;
+
+    if(students->count < MAX){  
+        for (i = students->count; i > 0 && students->Elements[i - 1].ID > addstud.ID; i--) {
+            students->Elements[i] = students->Elements[i - 1];    
+        }
+
+        students->Elements[i] = addstud;
+        students->count++;
+    }
+}
+
+
+void insertAtPos(LIST *students, studtype addstud, int pos){
+    int i = 0;
+
+    if (students->count != MAX){
+        if(pos >= 0 && pos <= students->count){                    
+            for(i = students->count; i > pos; i--){
+                students->Elements[i] = students->Elements[i - 1];
+            }
+            students->Elements[pos] = addstud;
+            students->count++;
+        }
+    }       
+}
+
+void deleteAtPos(LIST *students, int pos){
+    int i = 0;
+
+    if(pos >= 0 && pos < students->count){
+        for(i = pos; i < students->count - 1; i++){              
+            students->Elements[i] = students->Elements[i + 1];
+        }
+        students->count--;
+    }
+}
+
+int locateID(LIST students, int ID){
+    int i;
+    for(i = 0; i < students.count && students.Elements[i].ID != ID; i++){}
+    if (i == students.count){
+        return -1;                                                
+    }
+    return i + 1;                                                     
 }
 
 

@@ -229,7 +229,7 @@ void arrSortID(LIST *students){
 void insertSorted(LIST *students, studtype addstud){
     int i = students->count;
 
-    if(students->count < MAX){  // tiny clarity: capacity check
+    if(students->count < MAX){  
         for (i = students->count; i > 0 && students->Elements[i - 1].ID > addstud.ID; i--) {
             students->Elements[i] = students->Elements[i - 1];    
         }

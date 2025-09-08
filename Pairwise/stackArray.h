@@ -1,15 +1,23 @@
+/*
+    Member 1: Hestia Meizi L. Tibon
+    Member 2: 
+    Member 3:
+*/
+
+//Array implementation
+
 #ifndef STACK_H
 #define STACK_H
 
 #include <stdio.h>
 #include <stdbool.h>
 
-#define MAX 50
+#define MAX 10
 
 // stack definition
 typedef struct {
     char elem[MAX];
-    int top;   // -1 means empty
+    int top;   
 } Stack;
 
 // function definitions
