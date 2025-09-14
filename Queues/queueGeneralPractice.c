@@ -22,20 +22,25 @@ int main(void){
     enqueueArr(&list, 'H');
     enqueueArr(&list, 'E');
     displayArr(&list);
+    printf("Front element: %c\n", front(list));
 
     dequeueArr(&list);
     displayArr(&list);
+    printf("Front element: %c\n", front(list));
 
     enqueueArr(&list, 'A');
     enqueueArr(&list, 'B');
     displayArr(&list);
+    printf("Front element: %c\n", front(list));
 
     dequeueArr(&list);
     dequeueArr(&list);
     displayArr(&list);
+    printf("Front element: %c\n", front(list));
 
     return 0;
 }
+
 
 
 void initQueueArr(QueueArr *q){
