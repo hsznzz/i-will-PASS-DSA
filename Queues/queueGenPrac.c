@@ -1,3 +1,11 @@
+/*
+General Practice Area
+
+Created by: Hestia Meizi Tibon
+Date created: September 11, 2025
+Date modified: September 14, 2025
+*/
+
 #include <stdio.h>
 
 #define SIZE 10
@@ -22,21 +30,21 @@ int main(void){
     enqueueArr(&list, 'H');
     enqueueArr(&list, 'E');
     displayArr(&list);
-    printf("Front element: %c\n", front(list));
+    printf("Front element: %c\n\n", front(list));
 
     dequeueArr(&list);
     displayArr(&list);
-    printf("Front element: %c\n", front(list));
+    printf("Front element: %c\n\n", front(list));
 
     enqueueArr(&list, 'A');
     enqueueArr(&list, 'B');
     displayArr(&list);
-    printf("Front element: %c\n", front(list));
+    printf("Front element: %c\n\n", front(list));
 
     dequeueArr(&list);
     dequeueArr(&list);
     displayArr(&list);
-    printf("Front element: %c\n", front(list));
+    printf("Front element: %c\n\n", front(list));
 
     return 0;
 }
@@ -88,4 +96,5 @@ void displayArr(QueueArr *q){
         i = (i + 1) % SIZE;
     }
     printf("\n");
+
 }
