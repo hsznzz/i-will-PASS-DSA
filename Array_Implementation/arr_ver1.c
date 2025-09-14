@@ -1,6 +1,18 @@
 /*
 Array version 1 ౨ৎ
 
+Contents:
+    - initializing the list for use = initList(); /
+    - inserting at the first index of the arr = insertFirst(); /
+    - inserting at the last index of the arr = insertLast(); /
+    - inserting an element if it isnt repeated = insertLastUnique(); /
+    - sorting the elements = arrSortID(); /
+    - inserting an element, sorted = insertSorted(); /
+    - inserting an element at a specific index = insertAtPos(); /
+    - deleting an element at a specific index = deleteAtPos(); /
+    - locating the element at its index = locateID(); /
+    - displaying the elements = display(); /
+
 Created by: Hestia Meizi Tibon
 Date created: September 3, 2025
 Date modified: September 6, 2025
