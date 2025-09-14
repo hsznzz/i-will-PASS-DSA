@@ -94,11 +94,13 @@ void dequeue(Queue *List){
 }
 
 char frontQ(Queue List){
-    // if(List.front != 0){
-    //     return List.front->elem;
-    // } else {
-    //     return '\0';
-    // }
+    /*
+    if(List.front != 0){
+        return List.front->elem;
+    } else {
+        return '\0';
+    }
+    */
 
     return (List.front != 0) ? List.front->elem : '\0';
     
