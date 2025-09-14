@@ -19,7 +19,7 @@ Date modified: September 14, 2025
 typedef struct node{
     char elem;
     struct node *link;
-} nodetype, *Nodes;
+} *Nodes;
 
 typedef struct{
     Nodes front;
