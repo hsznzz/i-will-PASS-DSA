@@ -29,6 +29,7 @@ typedef struct{
 void initQueue(Queue *List);
 void enqueue (Queue *List, char X);
 void dequeue(Queue *List);
+char frontQ(Queue List);
 void displayQ(Queue List);
 
 int main(){
@@ -43,16 +44,18 @@ int main(){
 
     printf("\nAfter enqueue:\n");
     displayQ(List);
+    printf("\nFront element: %c", frontQ(List));
 
-    printf("\nAfter denqueue (1 time):\n");
+    printf("\n\nAfter denqueue (1 time):\n");
     dequeue(&List);
     displayQ(List);
+    printf("\nFront element: %c", frontQ(List));
 
-    printf("\nAfter denqueue(3 times):\n");
-    dequeue(&List);
+    printf("\n\nAfter denqueue(2 times):\n");
     dequeue(&List);
     dequeue(&List);
     displayQ(List);
+    printf("\nFront element: %c", frontQ(List));
 }
 
 void initQueue(Queue *List){
@@ -88,6 +91,17 @@ void dequeue(Queue *List){
             List->rear = NULL;
         }
     }
+}
+
+char frontQ(Queue List){
+    // if(List.front != 0){
+    //     return List.front->elem;
+    // } else {
+    //     return '\0';
+    // }
+
+    return (List.front != 0) ? List.front->elem : '\0';
+    
 }
 
 void displayQ(Queue List){

@@ -70,10 +70,7 @@ char dequeueArr(QueueArr *q){
 }
 
 char front(QueueArr q){
-    if ( ((q.rear + 1) % SIZE) == q.front ){
-        return '\0';
-    }
-    return q.data[q.front];
+    return ( ((q.rear + 1) % SIZE) != q.front ) ? q.data[q.front] : '\0';
 }
 
 void displayArr(QueueArr *q){
