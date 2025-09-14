@@ -2,11 +2,11 @@
 Structured Linked List Implementation for Queues ౨ৎ
 
 Contents:
-    - initializing the queue for use = initQueue()
-    - adding an element to the queue = enqueue()
-    - removing an element from the queue = dequeue()
-    - returning the front element from the queue = frontQ()
-    - displaying the queue = displayQ()
+    - initializing the queue for use = initQueue() /
+    - adding an element to the queue = enqueue() /
+    - removing an element from the queue = dequeue() /
+    - returning the front element from the queue = frontQ() /
+    - displaying the queue = displayQ() /
 
 Created by: Hestia Meizi Tibon 
 Date created: September 14, 2025
@@ -94,16 +94,7 @@ void dequeue(Queue *List){
 }
 
 char frontQ(Queue List){
-    /*
-    if(List.front != 0){
-        return List.front->elem;
-    } else {
-        return '\0';
-    }
-    */
-
     return (List.front != 0) ? List.front->elem : '\0';
-    
 }
 
 void displayQ(Queue List){
