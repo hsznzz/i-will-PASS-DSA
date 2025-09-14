@@ -1,7 +1,10 @@
-//first ever practice in C for dsa
-//created by: Hestia Meizi Tibon
-//date created: September 3, 2025
-//date modified: September 5, 2025
+/*
+First ever practice in C for dsa after a YEAR AAAAHH
+
+Created by: Hestia Meizi Tibon
+Date created: September 3, 2025
+Date modified: September 5, 2025
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

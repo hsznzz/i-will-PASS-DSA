@@ -1,7 +1,7 @@
 /*
     Member 1: Hestia Meizi L. Tibon
-    Member 2: 
-    Member 3:
+    Member 2: -
+    Member 3: -
 */
 
 //Array implementation

@@ -1,3 +1,12 @@
+/*
+Pairwise Activity
+
+Created by: Hestia Meizi Tibon
+Date created: September 11, 2025
+Date modified: September 11, 2025
+*/
+
+
 #include "stackArray.h"
 
 int main() {

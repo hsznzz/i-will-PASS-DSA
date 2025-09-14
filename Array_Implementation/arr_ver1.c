@@ -1,7 +1,10 @@
-//array version 1
-//created by: Hestia Meizi Tibon
-//date created: September 3, 2025
-//date modified: September 6, 2025
+/*
+Array version 1
+
+Created by: Hestia Meizi Tibon
+Date created: September 3, 2025
+Date modified: September 6, 2025
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

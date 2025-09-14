@@ -1,3 +1,18 @@
+/*
+Structured Linked List Implementation for Queues
+
+Contents:
+    - initializing the queue for use = initQueue()
+    - adding an element to the queue = enqueue()
+    - removing an element from the queue = dequeue()
+    - returning the front element from the queue = frontQ()
+    - displaying the queue = displayQ()
+
+Created by: Hestia Meizi Tibon
+Date created: September 14, 2025
+Date modified: September 14, 2025
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
