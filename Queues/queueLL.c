@@ -21,7 +21,6 @@ typedef struct node {
     struct node *link;
 } Node, *Queue;
 
-/* Function prototypes */
 void initQueue(Queue *List);
 void enqueue(Queue *List, char X);
 void dequeue(Queue *List);

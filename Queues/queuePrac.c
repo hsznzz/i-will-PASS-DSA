@@ -7,7 +7,6 @@ Date modified: September 14, 2025
 */
 
 #include <stdio.h>
-
 #define SIZE 10
 
 typedef struct{
@@ -23,7 +22,7 @@ char dequeueArr(QueueArr *q);
 char front(QueueArr q);
 void displayArr(QueueArr *q);
 
-int main(void){
+int main(){
     QueueArr list;
     initQueueArr(&list);
 
@@ -57,29 +56,23 @@ void initQueueArr(QueueArr *q){
 }
 
 void enqueueArr(QueueArr *q, char x){
-    if ( ((q->rear + 2) % SIZE) == q->front ){
-        printf("Queue is full, cannot enqueue %c.\n", x);
-        return;
+    if ( ((q->rear + 2) % SIZE) != q->front ){
+        q->rear = (q->rear + 1) % SIZE;
+        q->data[q->rear] = x;
     }
-    q->rear = (q->rear + 1) % SIZE;
-    q->data[q->rear] = x;
 }
 
 char dequeueArr(QueueArr *q){
-    if ( ((q->rear + 1) % SIZE) == q->front ){
-        printf("Queue is empty, cannot dequeue.\n");
-        return '\0';
+    if ( ((q->rear + 1) % SIZE) != q->front ){
+        
+        char val = q->data[q->front];
+        q->front = (q->front + 1) % SIZE;
+        return val;
     }
-    char val = q->data[q->front];
-    q->front = (q->front + 1) % SIZE;
-    return val;
 }
 
 char front(QueueArr q){
-    if ( ((q.rear + 1) % SIZE) == q.front ){
-        return '\0';
-    }
-    return q.data[q.front];
+    return (((q.rear + 1) % SIZE) != q.front) ? q.data[q.front] : '\0';
 }
 
 void displayArr(QueueArr *q){
