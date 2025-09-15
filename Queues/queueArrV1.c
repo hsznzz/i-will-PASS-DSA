@@ -1,13 +1,6 @@
 /*
 Queue Array Version 1 (Variation 2 = Sacrificial Space) ౨ৎ
 
-Created by: Hestia Meizi Tibon
-Date created: September 14, 2025
-Date modified: September 15, 2025
-*/
-
-/*
-
 Components:
     - initialize
     - enqueue
@@ -17,7 +10,11 @@ Components:
     - empty
     - display
 
+Created by: Hestia Meizi Tibon
+Date created: September 14, 2025
+Date modified: September 15, 2025
 */
+
 
 #include <stdio.h>
 #include <stdbool.h>
