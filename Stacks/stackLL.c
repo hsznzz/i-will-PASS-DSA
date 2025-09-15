@@ -1,8 +1,6 @@
 /*
 Stacks Linked List Implementation (Variation 1 = from MAX - 1 to 0) ౨ৎ
 
-== linked list thru data type ==
-
 Components:
     - initialize
     - isEmpty
