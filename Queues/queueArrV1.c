@@ -1,14 +1,12 @@
 /*
-Practice Area ౨ৎ
+Queue Array Version 1 (Variation 2 = Sacrificial Space) ౨ৎ
 
 Created by: Hestia Meizi Tibon
-Date created: September 11, 2025
-Date modified: September 14, 2025
+Date created: September 14, 2025
+Date modified: September 15, 2025
 */
 
 /*
-
-Queue Array ver. 1, var. 2
 
 Components:
     - initialize
