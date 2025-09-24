@@ -28,7 +28,7 @@ SET * Union(SET A, SET B){
     SET *C = malloc (sizeof(SET));
 
     for(i = 0; i < MAX; i++){
-        (*C)[i] = A[i] || B[i];
+        (*C)[i] = A[i] | B[i];
     }
 
     return C;
